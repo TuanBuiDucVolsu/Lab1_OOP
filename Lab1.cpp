@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <Windows.h>
 using namespace std;
-struct state
+struct state                                             // Создать структуру 
 {
 char country[50];
 char capital[50];
@@ -26,44 +26,44 @@ int main(int argc, char** argv) {
 	input(ct,N);
 	output(ct,N);
 	
-	char tmp[15];                                        
-    printf("\n+Enter the continent: ");   
-    gets(tmp);  
-    printf("\n%-15s %-15s \n","Sum Area","Sum Population ");
-    float sumarea = 0;
-    int sumpop = 0;
-    for (i = 0; i < N; i++)
+	char tmp[15];                             // Рассчитать суммарную площадь и население государств Северной Америки                                 
+        printf("\n+Enter the continent: ");   
+        gets(tmp);  
+        printf("\n%-15s %-15s \n","Sum Area","Sum Population ");
+        float sumarea = 0;
+        int sumpop = 0;
+        for (i = 0; i < N; i++)
 	{
         if (strcmp(ct[i].continent , tmp) == 0 )                    
 	    {
 	    	sumarea += ct[i].area;
 	    	sumpop += ct[i].population;  
         }
-    }
-    printf("\n%-15.2f %-15d \n",sumarea,sumpop);
+        }
+         printf("\n%-15.2f %-15d \n",sumarea,sumpop);
     
-    char temp[15];
-    printf("\n+Enter the language: ");
-    gets(temp);
-    printf("\nName and capital of the largest Spanish-speaking state in terms of population : \n");
-    printf("\n%-15s %-15s \n","Country","Capital");
-    int max = ct[0].population ;
-    int j = 0;
-    for(i = 1; i <= N; i++)
-    {
-    	if(strcmp(ct[i].language,temp) == 0)
-    	{
+         char temp[15];                                  //Вывести на экран название и столицу самого крупного по численности населения испано-язычного государства
+         printf("\n+Enter the language: ");
+         gets(temp);
+         printf("\nName and capital of the largest Spanish-speaking state in terms of population : \n");
+         printf("\n%-15s %-15s \n","Country","Capital");
+         int max = ct[0].population ;
+         int j = 0;
+         for(i = 1; i <= N; i++)
+         {
+           if(strcmp(ct[i].language,temp) == 0)
+    	 {
     		if(max < ct[i].population)
     		{
     		  max = ct[i].population;
     		  j = i;
-			}
 		}
-	}
-	printf("\n%-15s  %-15s\n",ct[j].country,ct[j].capital);
-	return 0;
+	  }
+	  }
+	  printf("\n%-15s  %-15s\n",ct[j].country,ct[j].capital);
+	  return 0;
 }
-void input(cty a[],int N)
+void input(cty a[],int N)                                        // Введите данные с клавиатуры
 {
 	int i;
 	for(i = 0; i < N; i++)
@@ -102,7 +102,7 @@ void input(cty a[],int N)
 	}
 }
 
-void output(cty a[],int N)
+void output(cty a[],int N)                       // Вывод данных
 {
 	int i,j;
 	cty temp;
