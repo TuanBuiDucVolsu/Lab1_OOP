@@ -75,8 +75,8 @@ void input(cty a[],int N)
 		
 		
 		printf("\n +Capital : ");
-        SetConsoleCP(1251);
-        gets(a[i].capital);
+                SetConsoleCP(1251);
+                gets(a[i].capital);
        
         
 		printf("\n +Government : ");
