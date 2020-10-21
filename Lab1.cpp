@@ -16,13 +16,13 @@ int population;
 
 }; 
 const int N = 5;
-typedef struct state cty; 
+ 
 
-void input(cty a[],int N);                                  
-void output(cty a[],int N);
+void input(state a[],int N);                                  
+void output(state a[],int N);
 int main(int argc, char** argv) {
 	int i;
-	cty ct[N];
+	state ct[N];
 	input(ct,N);
 	output(ct,N);
 	
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 	  printf("\n%-15s  %-15s\n",ct[j].country,ct[j].capital);
 	  return 0;
 }
-void input(cty a[],int N)                                        // Введите данные с клавиатуры
+void input(state a[],int N)                                        // Введите данные с клавиатуры
 {
 	int i;
 	for(i = 0; i < N; i++)
@@ -102,10 +102,10 @@ void input(cty a[],int N)                                        // Введит
 	}
 }
 
-void output(cty a[],int N)                       // Вывод данных
+void output(state a[],int N)                       // Вывод данных
 {
 	int i,j;
-	cty temp;
+	state temp;
 	for(i = 0 ; i < N ; i++)
         for( j = i+1 ; j <= N ; j++)
             if(strcmp(a[i].country ,a[j].country)>0)          
