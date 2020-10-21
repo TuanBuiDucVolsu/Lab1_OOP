@@ -18,8 +18,8 @@ int population;
 const int N = 5;
  
 
-void input(state a[],int N);                                  
-void output(state a[],int N);
+void input(state a[],int N);                             //Функция ввод данных     
+void output(state a[],int N);                            //Функция вывод данных
 int main(int argc, char** argv) {
 	int i;
 	state ct[N];
